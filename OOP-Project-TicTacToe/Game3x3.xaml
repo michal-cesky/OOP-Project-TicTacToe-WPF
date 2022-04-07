@@ -23,9 +23,9 @@
 
         <Label x:Name="textboxPlayer1" HorizontalAlignment="Left" Height="28" Margin="441,92,0,0" VerticalAlignment="Top" Width="124" Background="#FFCECBCB" Loaded="PlayersName_Load"/>
         <Label x:Name="textboxPlayer2" Content="" HorizontalAlignment="Left" Height="28" Margin="640,92,0,0" VerticalAlignment="Top" Width="124" Background="#FFCECBCB" Loaded="PlayersName_Load"/>
-
-        <Label x:Name="Player1_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="492,145,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.822,0.882"/>
-        <Label x:Name="Player2_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="692,141,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="2.866,0.627"/>
+        
+        <Label x:Name="Player1_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="492,145,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.822,0.882" />
+        <Label x:Name="Player2_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="692,141,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="2.866,0.627" />
 
     </Grid>
 </Window>

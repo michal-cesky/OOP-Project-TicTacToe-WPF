@@ -74,18 +74,18 @@ namespace OOP_Project_TicTacToe
 
             if (winner)
             {
-       //         disableButtons();
-
+                //         disableButtons();
+                
                 String winnername = "";
                 if (turn)
                 {
                     winnername = player2;
-                   // Player2_wincount.Content = (Int32.Parse(Player2_wincount.Content) + 1).ToString();
+                    Player2_wincount.Content = (Int32.Parse((string)Player2_wincount.Content) + 1).ToString();
                 }
                 else
                 {
                     winnername = player1;
-                  //  Player1_wincount.Content = (Int32.Parse(Player1_wincount.Content) + 1).ToString();
+                    Player1_wincount.Content = (Int32.Parse((string)Player1_wincount.Content) + 1).ToString();
                 }
 
                 MessageBox.Show(winnername + " Wins \nNeeded turns: " + turn_count, "WIN!!!!!!!!!!!");
@@ -103,18 +103,18 @@ namespace OOP_Project_TicTacToe
             }
         }
 
-      /*  private void disableButtons()           //znemožnění použití tlačítek
-        {
-            try
-            {
-                foreach (Control c in Controls)
-                {
-                    Button b = (Button)c;
-                    b.IsEnabled = false;
-                }
-            }
-            catch { }
-        }*/
+        /* private void disableButtons()           //znemožnění použití tlačítek
+         {
+             try
+             {
+                 foreach (Control c in Panel.controls)
+                 {
+                     Button b = (Button)c;
+                     b.IsEnabled = false;
+                 }
+             }
+             catch { }
+         }*/
 
         private void button_enter(object sender, EventArgs e)
         {
@@ -154,24 +154,25 @@ namespace OOP_Project_TicTacToe
             textboxPlayer2.Content = player2;
         }
 
+
         //private void setPlayerDefaultsToolStripMenuItem_Click(object sender, EventArgs e);
 
-        private void newGameToolStripMenuItem(object sender, EventArgs e)
-        {
-            turn = true;
-            turn_count = 0;
+        /* private void newGameToolStripMenuItem(object sender, EventArgs e)
+         {
+             turn = true;
+             turn_count = 0;
 
-           /* foreach (Control c in Controls)
-            {
-                try
-                {
-                    Button b = (Button)c;
-                    b.IsEnabled = true;
-                    b.Content = "";
-                } // end try
-                catch { }
-            } // end foreach*/
-        }
+             foreach (Control c in Controls)
+             {
+                 try
+                 {
+                     Button b = (Button)c;
+                     b.IsEnabled = true;
+                     b.Content = "";
+                 } // end try
+                 catch { }
+             } // end foreach
+         }*/
 
         public void randomnumber()
         {
