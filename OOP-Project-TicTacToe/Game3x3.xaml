@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Project_TicTacToe"
         mc:Ignorable="d"
-        Title="Game3x3" Height="450" Width="800">
+        Title="Game3x3" Height="450" Width="800"
+       
+        >
 
 
     <Grid>

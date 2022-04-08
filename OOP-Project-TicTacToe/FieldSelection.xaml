@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="FieldSelection" Height="450" Width="800">
     <Grid>
-        <Button Content="3x3" HorizontalAlignment="Left" Height="80" Margin="252,103,0,0" VerticalAlignment="Top" Width="278" Click="Button3x3"/>
+        <Button Content="3x3" HorizontalAlignment="Left" Height="80" Margin="252,103,0,0" VerticalAlignment="Top" Width="278" Click="Button3x3" />
         <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Height="80" Margin="252,250,0,0" VerticalAlignment="Top" Width="278" Click="ButtonBack"/>
 
     </Grid>
