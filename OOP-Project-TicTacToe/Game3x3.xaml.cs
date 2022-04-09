@@ -19,38 +19,51 @@ namespace OOP_Project_TicTacToe
     /// </summary>
     public partial class Game3x3 : Window
     {
-        bool turn = true;                   // true = hráč s X, false = hráč a Y;
+        bool turn;   // true = hráč s X, false = hráč a Y;
+        bool turnplayer;
         int turn_count = 0;
         static String player1, player2;
-        string currentPlayer;
-      
+        static String currentPlayer;
+
 
         public Game3x3()
         {
+            turn = true;
             InitializeComponent();
+            randomFirstplayer();
         }
 
-        private void button_click(object sender, EventArgs e)       //po kliknutí vypíše do dlačítka zank
-        {
-        
-            Button b = (Button)sender;
-            if (turn)
-                b.Content = "X";
-            else
-                b.Content = "O";
-
-            turn = !turn;                       //pro přepnutí kola na druhho hráče
-            b.IsEnabled = false;
-            turn_count++;
-
-            CheckWinner();
-            //   label2.Focus();
-        }
         public static void setPlayerNames(String Player1, String Player2)
         {
-           
             player1 = Player1;
             player2 = Player2;
+        }
+
+        private void PlayersName_Load(object sender, EventArgs e)
+        {
+            textboxPlayer1.Content = player1;
+            textboxPlayer2.Content = player2;
+        }
+
+        public void labelWhoisonturn_Load(object sender, EventArgs e)
+        {
+            textboxWhoisonturn.Content = currentPlayer;
+        }
+
+        public void randomFirstplayer()                              //random vybere hráče
+        {
+            var random = new Random();
+            turnplayer = random.Next(2) == 1;
+            if (turnplayer)
+            {
+                textboxWhoisonturn.Content = player2;
+                currentPlayer = player2;
+            }
+            else
+            {
+                textboxWhoisonturn.Content = player1;
+                currentPlayer = player1;
+            }
         }
 
         private void CheckWinner()       //kontrola zda jsou X nebo O 3x vedel sebe
@@ -78,17 +91,16 @@ namespace OOP_Project_TicTacToe
 
             if (winner)
             {
-                         disableButtons();
-                
+                disableButtons();
                 String winnername = "";
-                if (turn)
+                if (turnplayer)
                 {
-                    winnername = currentPlayer;
+                    winnername = player2;
                     Player2_wincount.Content = (Int32.Parse((string)Player2_wincount.Content) + 1).ToString();
                 }
                 else
                 {
-                    winnername = currentPlayer;
+                    winnername = player1;
                     Player1_wincount.Content = (Int32.Parse((string)Player1_wincount.Content) + 1).ToString();
                 }
 
@@ -107,7 +119,25 @@ namespace OOP_Project_TicTacToe
             }
         }
 
-         private void disableButtons()           //znemožnění použití tlačítek
+        private void button_click(object sender, EventArgs e)       //po kliknutí vypíše do dlačítka zank
+        {
+            Button b = (Button)sender;
+            if (turn)
+            {
+                b.Content = "X";
+            }
+            else
+            {
+                b.Content = "O";
+            }
+            turn = !turn;                       //pro přepnutí kola na druhho hráče
+            b.IsEnabled = false;
+            turn_count++;
+
+            CheckWinner();
+        }
+
+        private void disableButtons()           //znemožnění použití tlačítek
          {
             /* try
              {
@@ -118,8 +148,6 @@ namespace OOP_Project_TicTacToe
                  }
              }
              catch { }*/
-
-           
 
             A1.IsEnabled = false;
             A2.IsEnabled = false;
@@ -137,8 +165,6 @@ namespace OOP_Project_TicTacToe
 
         private void restartgameButton()
         {
-            
-
             A1.IsEnabled = true;
             A2.IsEnabled = true;
             A3.IsEnabled = true;
@@ -149,8 +175,16 @@ namespace OOP_Project_TicTacToe
             C2.IsEnabled = true;
             C3.IsEnabled = true;
             turn_count = 0;
-            turn = true;
-
+            A1.Content = "";
+            A2.Content = "";
+            A3.Content = "";
+            B1.Content = "";
+            B2.Content = "";
+            B3.Content = "";
+            C1.Content = "";
+            C2.Content = "";
+            C3.Content = "";
+            randomFirstplayer();
         }
 
         private void button_enter(object sender, EventArgs e)
@@ -163,6 +197,7 @@ namespace OOP_Project_TicTacToe
                 else
                     b.Content = "O";
             }
+            
         }
 
         private void button_leave(object sender, EventArgs e)
@@ -174,54 +209,10 @@ namespace OOP_Project_TicTacToe
             }
         }
 
-        private void ButtonNewGame(object sender, EventArgs e)
-        {
+        
 
-        }
+       
 
-
-        private void Game3x3_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void PlayersName_Load(object sender, EventArgs e)
-        {
-            randomnumber();
-            textboxPlayer1.Content = player1;
-            textboxPlayer2.Content = player2;
-        }
-
-
-        //private void setPlayerDefaultsToolStripMenuItem_Click(object sender, EventArgs e);
-
-        /* private void newGameToolStripMenuItem(object sender, EventArgs e)
-         {
-             turn = true;
-             turn_count = 0;
-
-             foreach (Control c in Controls)
-             {
-                 try
-                 {
-                     Button b = (Button)c;
-                     b.IsEnabled = true;
-                     b.Content = "";
-                 } // end try
-                 catch { }
-             } // end foreach
-         }*/
-
-        public void randomnumber()                              //random vybere hráče
-        {
-            var random = new Random();
-            turn = random.Next(2) == 1; 
-            if (turn) 
-                currentPlayer = player1;
-            else
-                currentPlayer = player2;
-
-        }
 
     }
 }
