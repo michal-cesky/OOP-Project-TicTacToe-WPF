@@ -22,15 +22,17 @@ namespace OOP_Project_TicTacToe
         bool turn;   // true = hráč s X, false = hráč a Y;
         bool turnplayer;
         int turn_count = 0;
-        static String player1, player2;
+        static String player1 = null;
+        static String player2 = null;
         static String currentPlayer;
+        private Lastgameplayer save = new Lastgameplayer();
 
 
         public Game3x3()
         {
-            turn = true;
             InitializeComponent();
             randomFirstplayer();
+            save.Lastgameplayersave(player1, player2);
         }
 
         public static void setPlayerNames(String Player1, String Player2)
@@ -41,8 +43,8 @@ namespace OOP_Project_TicTacToe
 
         private void PlayersName_Load(object sender, EventArgs e)
         {
-            textboxPlayer1.Content = player1;
-            textboxPlayer2.Content = player2;
+                textboxPlayer1.Content = player1;
+                textboxPlayer2.Content = player2;
         }
 
         public void labelWhoisonturn_Load(object sender, EventArgs e)
@@ -111,13 +113,21 @@ namespace OOP_Project_TicTacToe
             {
                 if (turn_count == 9)
                 {
-                    //draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
+                    //draw_count.Text = (Int32.Parse((string)draw_count.Text) + 1).ToString();
                     MessageBox.Show("Draw \nReached max turns: " + turn_count, "DRAEW :(");
                     restartgameButton();
                 }
 
             }
         }
+
+      /*  private void setPlayersNameDefault(object sender, EventArgs e)
+        {
+            player1 = "Player1";
+            player2 = "Player2";
+            textboxPlayer1.Content = player1;
+            textboxPlayer2.Content = player2;
+        }*/
 
         private void button_click(object sender, EventArgs e)       //po kliknutí vypíše do dlačítka zank
         {
@@ -208,11 +218,6 @@ namespace OOP_Project_TicTacToe
                 b.Content = "";
             }
         }
-
-        
-
-       
-
 
     }
 }
