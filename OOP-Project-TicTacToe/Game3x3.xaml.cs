@@ -24,6 +24,7 @@ namespace OOP_Project_TicTacToe
         int turn_count = 0;
         static String player1 = null;
         static String player2 = null;
+
         static String currentPlayer;
         private Lastgameplayer save = new Lastgameplayer();
 
@@ -33,7 +34,15 @@ namespace OOP_Project_TicTacToe
             InitializeComponent();
             randomFirstplayer();
             save.Lastgameplayersave(player1, player2);
+            save.Lastgameplayerload(player1, player2);
         }
+        private void PlayersName_Load222(object sender, EventArgs e)
+        {
+            textboxPlayer1ll.Content = player1;
+            textboxPlayer2ll.Content = player2;
+        }
+
+
 
         public static void setPlayerNames(String Player1, String Player2)
         {

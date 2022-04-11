@@ -22,7 +22,9 @@ namespace OOP_Project_TicTacToe
     {
         public MainWindow()
         {
+
             InitializeComponent();
+
         }
 
         private void ButtonNewGame(object sender, EventArgs e)

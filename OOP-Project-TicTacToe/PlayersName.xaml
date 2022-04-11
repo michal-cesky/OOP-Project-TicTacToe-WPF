@@ -11,7 +11,7 @@
         <TextBox x:Name="textboxPlayer2" HorizontalAlignment="Left" Height="30" Margin="493,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226"/>
 
         <Button x:Name="buttonSelectField" Content="Next" HorizontalAlignment="Left" Height="56" Margin="270,173,0,0" VerticalAlignment="Top" Width="255" Click="buttonFieldSelection"/>
-        <Button x:Name="buttonLoadNames" HorizontalAlignment="Left" Height="56" Margin="270,234,0,0" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.386,-2.949"/>
+        <Button x:Name="buttonLoadNames" HorizontalAlignment="Left" Height="56" Margin="270,234,0,0" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.386,-2.949" Click="ButtonLoadNames"/>
         <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Height="56" Margin="270,356,0,0" VerticalAlignment="Top" Width="255" Click="ButtonBack"/>
 
         <Label x:Name="SelectnamePlayer1" Content="Select name Player1" HorizontalAlignment="Left" Height="39" Margin="82,38,0,0" VerticalAlignment="Top" Width="226" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20"/>

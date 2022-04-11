@@ -14,8 +14,7 @@ namespace OOP_Project_TicTacToe
         {
             try
             {
-                File.WriteAllText(path, $"{player1};{player2}");
-
+                 File.WriteAllText(path, $"{player1}\n{player2}");
             }
             catch (System.IO.FileNotFoundException)
             {
@@ -23,6 +22,21 @@ namespace OOP_Project_TicTacToe
                 throw new System.IO.FileNotFoundException("File not found");
             }
 
+        }
+
+        public void Lastgameplayerload(String p1, String p2)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader(@"Data\Lastgameplayer22.txt");
+                p1 = sr.ReadLine();
+                p2 = sr.ReadLine();
+            }
+            catch
+            {
+                throw new System.IO.FileNotFoundException("File not found");
+
+            }  
         }
     }
 }
