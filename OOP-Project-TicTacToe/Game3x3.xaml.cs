@@ -34,15 +34,7 @@ namespace OOP_Project_TicTacToe
             InitializeComponent();
             randomFirstplayer();
             save.Lastgameplayersave(player1, player2);
-            save.Lastgameplayerload(player1, player2);
         }
-        private void PlayersName_Load222(object sender, EventArgs e)
-        {
-            textboxPlayer1ll.Content = player1;
-            textboxPlayer2ll.Content = player2;
-        }
-
-
 
         public static void setPlayerNames(String Player1, String Player2)
         {
@@ -51,9 +43,16 @@ namespace OOP_Project_TicTacToe
         }
 
         private void PlayersName_Load(object sender, EventArgs e)
-        {
+        {  
                 textboxPlayer1.Content = player1;
                 textboxPlayer2.Content = player2;
+        }
+
+        public void setPlayersNamesLastgameplayer()
+        {
+            (String p1, String p2) = Lastgameplayer.Lastgameplayerload();
+            player1 = p1;
+            player2 = p2;
         }
 
         public void labelWhoisonturn_Load(object sender, EventArgs e)

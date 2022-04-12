@@ -20,6 +20,9 @@ namespace OOP_Project_TicTacToe
     public partial class PlayersName : Window
     {
         private Game3x3 x = new Game3x3();
+
+        private Lastgameplayer load = new Lastgameplayer();
+
         public PlayersName()
         {
             InitializeComponent();
@@ -43,13 +46,21 @@ namespace OOP_Project_TicTacToe
         }
 
          private void ButtonLoadNames(object sender, RoutedEventArgs e)
-          {
-           // load.Lastgameplayerload();
+        {
             FieldSelection tabFieldSelection = new FieldSelection();
             this.Hide();
-            Game3x3.setPlayerNames(textboxPlayer1.Text, textboxPlayer2.Text);
             tabFieldSelection.ShowDialog();
             this.Close();
+        }
+
+        private void buttonLoadNames_Click(object sender, RoutedEventArgs e)
+        {
+            FieldSelection tabFieldSelection = new FieldSelection();
+            x.setPlayersNamesLastgameplayer();
+            this.Hide();
+            tabFieldSelection.ShowDialog();
+            this.Close();
+
         }
     }
 }

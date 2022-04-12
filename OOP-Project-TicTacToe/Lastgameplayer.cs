@@ -24,13 +24,16 @@ namespace OOP_Project_TicTacToe
 
         }
 
-        public void Lastgameplayerload(String p1, String p2)
+        public static (String, String) Lastgameplayerload()
         {
             try
             {
+                String p1;
+                String p2;
                 StreamReader sr = new StreamReader(@"Data\Lastgameplayer22.txt");
                 p1 = sr.ReadLine();
                 p2 = sr.ReadLine();
+                return (p1, p2);
             }
             catch
             {
