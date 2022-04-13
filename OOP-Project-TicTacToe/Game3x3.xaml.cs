@@ -19,27 +19,35 @@ namespace OOP_Project_TicTacToe
     /// </summary>
     public partial class Game3x3 : Window
     {
-        bool turn;   // true = hráč s X, false = hráč a Y;
+        bool turn = true;   //      = true start always with X
         bool turnplayer;
         int turn_count = 0;
         static String player1 = null;
         static String player2 = null;
 
         static String currentPlayer;
-        private Lastgameplayer save = new Lastgameplayer();
+        //private Lastgameplayer save = new Lastgameplayer();
 
 
         public Game3x3()
         {
             InitializeComponent();
             randomFirstplayer();
-            save.Lastgameplayersave(player1, player2);
         }
 
         public static void setPlayerNames(String Player1, String Player2)
         {
-            player1 = Player1;
-            player2 = Player2;
+            if (string.IsNullOrEmpty(Player1) || string.IsNullOrEmpty(Player2))         //set default names
+            {
+                player1 = "Player1";
+                player2 = "Player2";
+            }
+            else
+            {
+                player1 = Player1;
+                player2 = Player2;
+            }
+           
         }
 
         private void PlayersName_Load(object sender, EventArgs e)
@@ -48,7 +56,7 @@ namespace OOP_Project_TicTacToe
                 textboxPlayer2.Content = player2;
         }
 
-        public void setPlayersNamesLastgameplayer()
+        public void loadPlayersNamesLastgameplayer()
         {
             (String p1, String p2) = Lastgameplayer.Lastgameplayerload();
             player1 = p1;
@@ -129,14 +137,6 @@ namespace OOP_Project_TicTacToe
             }
         }
 
-      /*  private void setPlayersNameDefault(object sender, EventArgs e)
-        {
-            player1 = "Player1";
-            player2 = "Player2";
-            textboxPlayer1.Content = player1;
-            textboxPlayer2.Content = player2;
-        }*/
-
         private void button_click(object sender, EventArgs e)       //po kliknutí vypíše do dlačítka zank
         {
             Button b = (Button)sender;
@@ -193,6 +193,7 @@ namespace OOP_Project_TicTacToe
             C2.IsEnabled = true;
             C3.IsEnabled = true;
             turn_count = 0;
+            turn = true;
             A1.Content = "";
             A2.Content = "";
             A3.Content = "";

@@ -11,15 +11,15 @@
             <RowDefinition Height="43*"/>
             <RowDefinition Height="174*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="textboxPlayer1" HorizontalAlignment="Left" Height="30" Margin="82,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Grid.Row="1"/>
-        <TextBox x:Name="textboxPlayer2" HorizontalAlignment="Left" Height="30" Margin="493,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Grid.Row="1"/>
+        <TextBox x:Name="textboxPlayer1" HorizontalAlignment="Left" Height="30" Margin="83,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Grid.Row="1"/>
+        <TextBox x:Name="textboxPlayer2" HorizontalAlignment="Left" Height="30" Margin="494,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Grid.Row="1"/>
 
-        <Button x:Name="buttonSelectField" Content="Next" HorizontalAlignment="Left" Height="56" Margin="270,87,0,0" VerticalAlignment="Top" Width="255" Click="buttonFieldSelection" Grid.Row="1"/>
-        <Button x:Name="buttonLoadNames" HorizontalAlignment="Left" Height="56" Margin="270,148,0,0" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.386,-2.949" Click="buttonLoadNames_Click" Grid.Row="1" Content="Load names from last game"/>
+        <Button x:Name="buttonSelectField" Content="Next" HorizontalAlignment="Left" Height="56" Margin="270,148,0,0" VerticalAlignment="Top" Width="255" Click="buttonFieldSelection" Grid.Row="1"/>
+        <Button x:Name="buttonLoadNames" HorizontalAlignment="Left" Height="56" Margin="270,209,0,0" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.386,-2.949" Click="buttonLoadNames_Click" Grid.Row="1" Content="Load names from last game"/>
         <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Height="56" Margin="270,270,0,0" VerticalAlignment="Top" Width="255" Click="ButtonBack" Grid.Row="1"/>
 
-        <Label x:Name="SelectnamePlayer1" Content="Select name Player1" HorizontalAlignment="Left" Height="39" Margin="82,38,0,0" VerticalAlignment="Top" Width="226" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20"/>
-        <Label x:Name="SelectnamePlayer2" Content="Select name Player2" HorizontalAlignment="Left" Height="39" Margin="493,38,0,0" VerticalAlignment="Top" Width="226" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20"/>
+        <Label x:Name="SelectnamePlayer1" Content="Select name Player1" HorizontalAlignment="Left" Height="39" Margin="83,86,0,0" VerticalAlignment="Top" Width="226" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20" Grid.RowSpan="2"/>
+        <Label x:Name="SelectnamePlayer2" Content="Select name Player2" HorizontalAlignment="Left" Height="39" Margin="494,86,0,0" VerticalAlignment="Top" Width="226" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="20" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

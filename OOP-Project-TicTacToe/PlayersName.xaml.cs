@@ -19,7 +19,7 @@ namespace OOP_Project_TicTacToe
     /// </summary>
     public partial class PlayersName : Window
     {
-        private Game3x3 x = new Game3x3();
+        private Game3x3 game = new Game3x3();
 
         private Lastgameplayer load = new Lastgameplayer();
 
@@ -32,9 +32,20 @@ namespace OOP_Project_TicTacToe
         {
             FieldSelection tabFieldSelection = new FieldSelection();
             this.Hide();
-            Game3x3.setPlayerNames(textboxPlayer1.Text, textboxPlayer2.Text);
+            Game3x3.setPlayerNames(textboxPlayer1.Text, textboxPlayer2.Text);       //set new names to players
+            load.Lastgameplayersave(textboxPlayer1.Text, textboxPlayer2.Text);      //save new names to txt
             tabFieldSelection.ShowDialog();
             this.Close();
+        }
+
+        private void buttonLoadNames_Click(object sender, RoutedEventArgs e)
+        {
+            game.loadPlayersNamesLastgameplayer();                                     //load last game players from txt
+            FieldSelection tabFieldSelection = new FieldSelection();
+            this.Hide();
+            tabFieldSelection.ShowDialog();
+            this.Close();
+
         }
 
         private void ButtonBack(object sender, EventArgs e)         //vrácení do hlavní nabýdky
@@ -43,24 +54,6 @@ namespace OOP_Project_TicTacToe
             this.Hide();
             tabNewGame.ShowDialog();
             this.Close();
-        }
-
-         private void ButtonLoadNames(object sender, RoutedEventArgs e)
-        {
-            FieldSelection tabFieldSelection = new FieldSelection();
-            this.Hide();
-            tabFieldSelection.ShowDialog();
-            this.Close();
-        }
-
-        private void buttonLoadNames_Click(object sender, RoutedEventArgs e)
-        {
-            FieldSelection tabFieldSelection = new FieldSelection();
-            x.setPlayersNamesLastgameplayer();
-            this.Hide();
-            tabFieldSelection.ShowDialog();
-            this.Close();
-
         }
     }
 }

@@ -19,15 +19,10 @@ namespace OOP_Project_TicTacToe
     /// </summary>
     public partial class FieldSelection : Window
     {
+
         public FieldSelection()
         {
             InitializeComponent();
-        }
-
-        private void FieldSelection_Load(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void ButtonBack(object sender, EventArgs e)
