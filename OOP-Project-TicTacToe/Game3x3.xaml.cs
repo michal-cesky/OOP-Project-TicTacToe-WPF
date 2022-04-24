@@ -33,6 +33,8 @@ namespace OOP_Project_TicTacToe
         {
             InitializeComponent();
             randomFirstplayer();
+            var random = new Random();
+            turnplayer = random.Next(2) == 1;
         }
 
         public static void setPlayerNames(String Player1, String Player2)
@@ -70,9 +72,7 @@ namespace OOP_Project_TicTacToe
 
         public void randomFirstplayer()                              //random vybere hráče
         {
-            var random = new Random();
-            turnplayer = random.Next(2) == 1;
-            if (turnplayer)
+            if (!turnplayer)
             {
                 textboxWhoisonturn.Content = player2;
                 currentPlayer = player2;
@@ -140,7 +140,7 @@ namespace OOP_Project_TicTacToe
         private void button_click(object sender, EventArgs e)       //po kliknutí vypíše do dlačítka zank
         {
             Button b = (Button)sender;
-            if (turn)
+            if (turnplayer)         ///
             {
                 b.Content = "X";
             }
@@ -148,7 +148,7 @@ namespace OOP_Project_TicTacToe
             {
                 b.Content = "O";
             }
-            turn = !turn;                       //pro přepnutí kola na druhho hráče
+            turnplayer = !turnplayer;      ///////////                 //pro přepnutí kola na druhho hráče
             b.IsEnabled = false;
             turn_count++;
 
@@ -193,7 +193,7 @@ namespace OOP_Project_TicTacToe
             C2.IsEnabled = true;
             C3.IsEnabled = true;
             turn_count = 0;
-            turn = true;
+     //       turnplayer = true;            ///////////
             A1.Content = "";
             A2.Content = "";
             A3.Content = "";
@@ -211,7 +211,7 @@ namespace OOP_Project_TicTacToe
             Button b = (Button)sender;
             if (b.IsEnabled)
             {
-                if (turn)
+                if (turnplayer)         /////////////////
                     b.Content = "X";
                 else
                     b.Content = "O";
