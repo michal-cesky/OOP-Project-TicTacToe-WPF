@@ -24,10 +24,13 @@ namespace OOP_Project_TicTacToe
         int turn_count = 0;
         static String player1 = null;
         static String player2 = null;
+        int Player1_wincountsave = 0;
+        int Player2_wincountsave = 0;
 
         static String currentPlayer;
         //private Lastgameplayer save = new Lastgameplayer();
 
+        private Leaderboard leaderboard = new Leaderboard();
 
         public Game3x3()
         {
@@ -115,11 +118,13 @@ namespace OOP_Project_TicTacToe
                 {
                     winnername = player2;
                     Player2_wincount.Content = (Int32.Parse((string)Player2_wincount.Content) + 1).ToString();
+                   // Player2_wincountsave = Player2_wincountsave + 1;
                 }
                 else
                 {
                     winnername = player1;
                     Player1_wincount.Content = (Int32.Parse((string)Player1_wincount.Content) + 1).ToString();
+                   // Player1_wincountsave = Player1_wincountsave + 1;
                 }
 
                 MessageBox.Show(winnername + " Wins \nNeeded turns: " + turn_count, "WIN!!!!!!!!!!!");
@@ -228,5 +233,9 @@ namespace OOP_Project_TicTacToe
             }
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            leaderboard.SavePlayers(player1, Player1_wincountsave, player2, Player2_wincountsave);
+        }
     }
 }
