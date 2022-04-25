@@ -16,6 +16,12 @@ namespace OOP_Project_TicTacToe
         {
             try
             {
+                foreach (var line in File.ReadLines(path))
+                {
+                    string[] val = line.Split(',');
+                    path1.Add(val[0], int.Parse(val[1]));
+                }
+
                 if (path1.ContainsKey(player1))
                 {
                     path1.TryGetValue(player1, out currentload);
@@ -28,21 +34,16 @@ namespace OOP_Project_TicTacToe
                 if (path1.ContainsKey(player2))
                 {
                     path1.TryGetValue(player2, out currentload);
-                    path1[player1] = currentload + Player1_wincountsave;
+                    path1[player2] = currentload + Player1_wincountsave;
                 }
                 else
                 {
                     path1.Add(player2, Player2_wincountsave);
                 }
                 StringBuilder sb = new StringBuilder();
-                foreach (KeyValuePair<string, int> kvp in path1)
-                {
-                    sb.AppendLine(string.Format($"{0};{1}", kvp.Key, kvp.Value));
-                }
-
                 using (StreamWriter file = new StreamWriter(path))
                     foreach (var entry in path1)
-                        file.WriteLine($"{0},{1}", entry.Key, entry.Value);
+                        file.WriteLine("{0},{1}", entry.Key, entry.Value);
             }
             catch (System.IO.FileNotFoundException)
             {
