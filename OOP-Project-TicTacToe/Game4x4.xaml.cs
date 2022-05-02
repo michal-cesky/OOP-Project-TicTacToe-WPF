@@ -272,7 +272,11 @@ namespace OOP_Project_TicTacToe
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            
+            leaderboard.loadleaderboard();
+            lboard tablboard = new lboard();     //pro zpuštění okna vložení jmen
+            this.Hide();
+            tablboard.ShowDialog();
+            this.Close();
         }
     }
 }

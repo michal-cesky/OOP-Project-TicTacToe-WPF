@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="lboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +89,9 @@
       <DependentUpon>Game4x4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lastgameplayer.cs" />
+    <Compile Include="lboard.xaml.cs">
+      <DependentUpon>lboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Leaderboard.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
