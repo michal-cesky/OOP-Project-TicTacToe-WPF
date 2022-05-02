@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 namespace OOP_Project_TicTacToe
 {
     /// <summary>
-    /// Interakční logika pro Game3x3.xaml
+    /// Interakční logika pro Game4x4.xaml
     /// </summary>
-    public partial class Game3x3 : Window
+    public partial class Game4x4 : Window
     {
         bool turn = true;   //      = true start always with X
         bool turnplayer;
@@ -32,7 +32,7 @@ namespace OOP_Project_TicTacToe
 
         private Leaderboard leaderboard = new Leaderboard();
 
-        public Game3x3()
+        public Game4x4()
         {
             InitializeComponent();
             randomFirstplayer();
@@ -52,13 +52,13 @@ namespace OOP_Project_TicTacToe
                 player1 = Player1;
                 player2 = Player2;
             }
-           
+
         }
 
         private void PlayersName_Load(object sender, EventArgs e)
-        {  
-                textboxPlayer1.Content = player1;
-                textboxPlayer2.Content = player2;
+        {
+            textboxPlayer1.Content = player1;
+            textboxPlayer2.Content = player2;
         }
 
         public void loadPlayersNamesLastgameplayer()
@@ -91,23 +91,27 @@ namespace OOP_Project_TicTacToe
         {
             bool winner = false;
 
-            if ((A1.Content == A2.Content) && (A2.Content == A3.Content) && (!A1.IsEnabled))              //horizontálně
+            if ((Z0.Content == Z1.Content) && (Z1.Content == Z2.Content) && (Z2.Content == Z3.Content) && (!Z0.IsEnabled))
                 winner = true;
-            else if ((B1.Content == B2.Content) && (B2.Content == B3.Content) && (!B1.IsEnabled))
+            else if ((A0.Content == A1.Content) && (A1.Content == A2.Content) && (A2.Content == A3.Content) && (!A0.IsEnabled))              //horizontálně
                 winner = true;
-            else if ((C1.Content == C2.Content) && (C2.Content == C3.Content) && (!C1.IsEnabled))
+            else if ((B0.Content == B1.Content) && (B1.Content == B2.Content) && (B2.Content == B3.Content) && (!B0.IsEnabled))
                 winner = true;
-
-            else if ((A1.Content == B1.Content) && (B1.Content == C1.Content) && (!A1.IsEnabled))         //vertikálně
-                winner = true;
-            else if ((A2.Content == B2.Content) && (B2.Content == C2.Content) && (!A2.IsEnabled))
-                winner = true;
-            else if ((A3.Content == B3.Content) && (B3.Content == C3.Content) && (!A3.IsEnabled))
+            else if ((C0.Content == C1.Content) && (C1.Content == C2.Content) && (C2.Content == C3.Content) && (!C0.IsEnabled))
                 winner = true;
 
-            else if ((A1.Content == B2.Content) && (B2.Content == C3.Content) && (!A1.IsEnabled))         //diagonálně
+            else if ((Z0.Content == A0.Content) && (A0.Content == B0.Content) && (B0.Content == C0.Content) && (!Z0.IsEnabled))
                 winner = true;
-            else if ((A3.Content == B2.Content) && (B2.Content == C1.Content) && (!C1.IsEnabled))
+            else if ((Z1.Content == A1.Content) && (A1.Content == B1.Content) && (B1.Content == C1.Content) && (!Z1.IsEnabled))         //vertikálně
+                winner = true;
+            else if ((Z2.Content == A2.Content) && (A2.Content == B2.Content) && (B2.Content == C2.Content) && (!Z2.IsEnabled))
+                winner = true;
+            else if ((Z3.Content == A3.Content) && (A3.Content == B3.Content) && (B3.Content == C3.Content) && (!Z3.IsEnabled))
+                winner = true;
+
+            else if ((Z0.Content == A1.Content) && (A1.Content == B2.Content) && (B2.Content == C3.Content) && (!Z0.IsEnabled))         //diagonálně
+                winner = true;
+            else if ((Z3.Content == A2.Content) && (A2.Content == B1.Content) && (B1.Content == C0.Content) && (!C0.IsEnabled))
                 winner = true;
 
             if (winner)
@@ -132,7 +136,7 @@ namespace OOP_Project_TicTacToe
             } // end if
             else
             {
-                if (turn_count == 9)
+                if (turn_count == 16)
                 {
                     //draw_count.Text = (Int32.Parse((string)draw_count.Text) + 1).ToString();
                     MessageBox.Show("Draw \nReached max turns: " + turn_count, "DRAEW :(");
@@ -161,7 +165,7 @@ namespace OOP_Project_TicTacToe
         }
 
         private void disableButtons()           //znemožnění použití tlačítek
-         {
+        {
             /* try
              {
                 foreach (Control c in controls)
@@ -171,40 +175,60 @@ namespace OOP_Project_TicTacToe
                  }
              }
              catch { }*/
-
+            Z0.IsEnabled = false;
+            Z1.IsEnabled = false;
+            Z2.IsEnabled = false;
+            Z3.IsEnabled = false;
+            A0.IsEnabled = false;
             A1.IsEnabled = false;
             A2.IsEnabled = false;
             A3.IsEnabled = false;
+            B0.IsEnabled = false;
             B1.IsEnabled = false;
             B2.IsEnabled = false;
             B3.IsEnabled = false;
+            C0.IsEnabled = false;
             C1.IsEnabled = false;
             C2.IsEnabled = false;
             C3.IsEnabled = false;
             //reset_btn.Enabled = true;
-            
+
 
         }
 
         private void restartgameButton()
         {
+            Z0.IsEnabled = true;
+            Z1.IsEnabled = true;
+            Z2.IsEnabled = true;
+            Z3.IsEnabled = true;
+            A0.IsEnabled = true;
             A1.IsEnabled = true;
             A2.IsEnabled = true;
             A3.IsEnabled = true;
+            B0.IsEnabled = true;
             B1.IsEnabled = true;
             B2.IsEnabled = true;
             B3.IsEnabled = true;
+            C0.IsEnabled = true;
             C1.IsEnabled = true;
             C2.IsEnabled = true;
             C3.IsEnabled = true;
             turn_count = 0;
-     //       turnplayer = true;            ///////////
+            //       turnplayer = true;            ///////////
+            Z0.Content = "";
+            Z1.Content = "";
+            Z2.Content = "";
+            Z3.Content = "";
+            A0.Content = "";
             A1.Content = "";
             A2.Content = "";
             A3.Content = "";
+            B0.Content = "";
             B1.Content = "";
             B2.Content = "";
             B3.Content = "";
+            C0.Content = "";
             C1.Content = "";
             C2.Content = "";
             C3.Content = "";
@@ -221,7 +245,7 @@ namespace OOP_Project_TicTacToe
                 else
                     b.Content = "O";
             }
-            
+
         }
 
         private void button_leave(object sender, EventArgs e)

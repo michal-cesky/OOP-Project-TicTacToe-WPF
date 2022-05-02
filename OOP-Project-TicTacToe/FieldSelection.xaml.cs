@@ -40,5 +40,13 @@ namespace OOP_Project_TicTacToe
             field3x3.ShowDialog();
             this.Close();
         }
+
+        private void Button4x4(object sender, RoutedEventArgs e)
+        {
+            Game4x4 field4x4 = new Game4x4();
+            this.Hide();
+            field4x4.ShowDialog();
+            this.Close();
+        }
     }
 }

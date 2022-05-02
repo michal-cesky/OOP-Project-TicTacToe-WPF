@@ -1,0 +1,48 @@
+﻿<Window x:Class="OOP_Project_TicTacToe.Game4x4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project_TicTacToe"
+        mc:Ignorable="d"
+        Title="Game3x3" Height="450" Width="800"
+       
+        >
+
+
+    <Grid>
+        <Button x:Name="Z0"  HorizontalAlignment="Left" Height="70" Margin="14,37,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="Z1"  HorizontalAlignment="Left" Height="70" Margin="123,37,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="Z2"  HorizontalAlignment="Left" Height="70" Margin="232,37,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="Z3"  HorizontalAlignment="Left" Height="70" Margin="341,37,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        
+        <Button x:Name="A0"  HorizontalAlignment="Left" Height="70" Margin="14,132,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="A1"  HorizontalAlignment="Left" Height="70" Margin="123,132,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="A2"  HorizontalAlignment="Left" Height="70" Margin="232,132,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="A3"  HorizontalAlignment="Left" Height="70" Margin="341,132,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+
+        <Button x:Name="B0"  HorizontalAlignment="Left" Height="70" Margin="14,227,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="B1"  HorizontalAlignment="Left" Height="70" Margin="123,227,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="B2"  HorizontalAlignment="Left" Height="70" Margin="232,227,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="B3"  HorizontalAlignment="Left" Height="70" Margin="341,227,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+
+        <Button x:Name="C0"  HorizontalAlignment="Left" Height="70" Margin="14,322,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="C1"  HorizontalAlignment="Left" Height="70" Margin="123,322,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="C2"  HorizontalAlignment="Left" Height="70" Margin="232,322,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+        <Button x:Name="C3"  HorizontalAlignment="Left" Height="70" Margin="341,322,0,0" VerticalAlignment="Top" Width="70" Click="button_click" MouseEnter="button_enter" MouseLeave="button_leave"/>
+
+        <Label x:Name="textboxPlayer1" HorizontalAlignment="Left" Height="28" Margin="438,168,0,0" VerticalAlignment="Top" Width="124" Background="#FFCECBCB" HorizontalContentAlignment="Center" Loaded="PlayersName_Load"/>
+        <Label x:Name="textboxPlayer2" Content="" HorizontalAlignment="Left" Height="28" Margin="637,168,0,0" VerticalAlignment="Top" Width="124" Background="#FFCECBCB" HorizontalContentAlignment="Center" Loaded="PlayersName_Load"/>
+
+        <Label x:Name="Player1_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="489,221,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.822,0.882" />
+        <Label x:Name="Player2_wincount" Content="0" HorizontalAlignment="Left" Height="27" Margin="689,217,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="2.866,0.627" />
+
+        <Label x:Name="textboxWhoisonturn" HorizontalAlignment="Left" Height="31" Margin="502,106,0,0" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" Loaded="labelWhoisonturn_Load" Background="#FFCECBCB"/>
+
+        <Label x:Name="StartingPlayer" Content="Starting Player"  HorizontalAlignment="Left" Height="31" Margin="438,61,0,0" VerticalAlignment="Top" Width="323" HorizontalContentAlignment="Center" Loaded="labelWhoisonturn_Load" FontWeight="Bold" FontSize="16"/>
+        <Button Content="Show leaderboard" HorizontalAlignment="Left" Height="35" Margin="502,304,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_3"/>
+        <Button Content="Save to leaderboard" HorizontalAlignment="Left" Height="35" Margin="502,253,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
+        <Button Content="Exit to main menu" HorizontalAlignment="Left" Height="35" Margin="502,355,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>

@@ -85,3 +85,5 @@ C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\OOP-Project
 C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\OOP-Project-TicTacToe.csproj.CoreCompileInputs.cache
 C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\OOP-Project-TicTacToe.exe
 C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\OOP-Project-TicTacToe.pdb
+C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\Game4x4.g.cs
+C:\OOP\OOP\OOP-Project-TicTacToe-WPF\OOP-Project-TicTacToe\obj\Debug\Game4x4.baml
